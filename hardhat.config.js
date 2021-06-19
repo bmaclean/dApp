@@ -17,6 +17,16 @@ task("accounts", "Prints the list of accounts", async () => {
  * @type import('hardhat/config').HardhatUserConfig
  */
 module.exports = {
-  solidity: "0.7.3",
+  solidity: "0.8.3",
+  paths: {
+    artifacts: './src/artifacts',
+  },
+  networks: {
+    hardhat: {
+      // chain id needs to be set to 1337 due to MetaMask config issue:
+      // https://hardhat.org/metamask-issue.html
+      chainId: 1337
+    }
+  }
 };
 
